@@ -16,23 +16,28 @@ body {
     padding: 20px 0;
 }
 
+/* Mobile First default Styles */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .nav-links ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
+    gap: 15px;
 }
 
 .nav-links a {
     text-decoration: none;
-    margin: 0 10px;
     color: hsl(236, 13%, 42%);
     transition: color 0.3s;
+    display: block;
+    text-align: center;
+    padding: 10px;
 }
 
 .nav-links a:hover {
@@ -41,13 +46,13 @@ body {
 
 .home {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .left {
-    flex: 2;
+    width: 100%;
 }
 
 .left img {
@@ -57,25 +62,15 @@ body {
 
 .future {
     display: flex;
-    gap: 30px;
-}
-
-.section1 {
-    flex: 1;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .section1 h1 {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 800;
     line-height: 1;
-    color: hsl(240, 9%, 18%); 
-}
-
-.section2 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    color: hsl(240, 9%, 18%);
 }
 
 .section2 p {
@@ -88,20 +83,17 @@ body {
     background-color: hsl(5, 85%, 63%);
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 15px 30px;
     font-weight: 700;
     letter-spacing: 2px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: fit-content;
-}
-
-.section2 button:hover {
-    background-color: hsl(240, 100%, 5%);
+    width: 100%;
+    max-width: 200px;
 }
 
 .right {
-    flex: 1;
+    width: 100%;
     background-color: hsl(240, 100%, 5%);
     color: white;
     padding: 25px;
@@ -110,7 +102,7 @@ body {
 .right .title h1 {
     color: hsl(35, 77%, 62%);
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .news-item {
@@ -139,14 +131,14 @@ hr {
 
 .bottom-section {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    justify-content: space-between;
 }
 
 .card {
     display: flex;
     gap: 20px;
-    flex: 1;
+    width: 100%;
 }
 
 .card img {
@@ -174,4 +166,86 @@ hr {
 .card-content p {
     color: hsl(236, 13%, 42%);
     line-height: 1.6;
+}
+
+/* Tablet View  */
+@media (min-width: 600px) and (max-width: 992px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links ul {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .future {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .section1 h1 {
+        font-size: 42px;
+    }
+
+    .bottom-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px);
+        min-width: 250px;
+    }
+}
+
+/* Lapi */
+@media (min-width: 993px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links ul {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .home {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .left {
+        flex: 2;
+    }
+
+    .right {
+        flex: 1;
+    }
+
+    .future {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .section1 h1 {
+        font-size: 48px;
+    }
+
+    .section2 button {
+        width: fit-content;
+    }
+
+    .bottom-section {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .card {
+        flex: 1;
+    }
 }
