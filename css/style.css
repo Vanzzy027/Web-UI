@@ -1,0 +1,36 @@
+body{
+    font-family: 'Inter',sans-serif;
+}
+
+.navbar{
+   display:flex;
+   justify-content: space-between; 
+   align-items: center;
+}
+
+.nav-links ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a{
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+}
+
+.home .left img{
+    width: 98%;
+}
+.future {
+    display: flex;
+}
+
+.home .right{
+    background-color: hsl(240, 100%, 5%);
+    color: white;
+}
